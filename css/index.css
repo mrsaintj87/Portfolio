@@ -124,3 +124,145 @@ ul.workLinks li a img
     text-align: center;
     margin: 5% auto;
 }
+
+/* this is the css for the all work page */
+
+h1,
+h1+p {
+	margin: 30px 15px 0;
+	font-weight: 300;
+}
+h1+p a {
+	color: #333;
+}
+h1+p a:hover {
+	text-decoration: none;
+}
+h2 {
+	margin: 60px 15px 0;
+	padding: 0;
+	font-weight: 300;
+}
+h2 span {
+	margin-left: 1em;
+	color: #aaa;
+	font-size: 85%;
+}
+.column {
+	margin: 15px 15px 0;
+	padding: 0;
+}
+.column:last-child {
+	padding-bottom: 60px;
+}
+.column::after {
+	content: '';
+	clear: both;
+	display: block;
+}
+.column div {
+	position: relative;
+	float: left;
+	height: 200px;
+	margin: 0 0 0 25px;
+	padding: 0;
+}
+.column div:first-child {
+	margin-left: 0;
+}
+.column div span {
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	z-index: 1;
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	font-size: 18px;
+	text-decoration: none;
+	text-align: left;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+    opacity: 0;
+    background-color: rgba(0,0,0,.5);
+}
+figure {
+	width: 300px;
+	border-radius:13px ;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+
+figure img 
+{
+    width: 100%;
+}
+
+.gallery a {
+	width: 300px;
+	border-radius:13px ;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.gallery ul
+{
+    width: 100%;
+    text-align: center;
+}
+
+.gallery p
+{
+    margin-left: 15px;
+    font-weight: 100;
+}
+
+.gallery h2
+{
+    margin-top:15px;
+    font-weight: 600;
+    font-size: 21px;
+}
+
+.gallery ul li
+{
+    display: inline-block;
+    width: 30%; 
+    margin-left: 3%;
+}
+
+.gallery li
+{
+   position: relative; 
+}
+
+.gallery a:hover+span {
+	bottom: 0px;
+	opacity: 1;
+}
+
+.gallery a img 
+{
+    width: 100%;
+}
+
+/* Blur */
+
+
+
+
+.gallery  img {
+	-webkit-filter: blur(0px);
+	filter: blur(0px);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.gallery a:hover img {
+	-webkit-filter: blur(4px);
+	filter: blur(4px);
+}
