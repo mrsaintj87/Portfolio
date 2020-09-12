@@ -23,6 +23,8 @@ img
     padding: 0px 100px !important;
     background-color: white!important;
     max-height: 70px;
+    position: relative;
+    z-index: 5;
 }
 
 .navbar-brand
@@ -32,6 +34,27 @@ img
     z-index: 2;
     top: 0;
 }
+
+
+
+
+.navbar-internal {
+    animation: slidein 1s ease-in-out 1s forwards;
+  }
+  
+  @keyframes slidein {
+    0% {
+      transform: translateY(0px);
+    }
+    10% {
+        transform: translateY(-10px) ;
+      }
+    100% {
+      transform: translateY(-130px) ;
+    }
+  }
+
+
 
 .navbar-brand img
 {
@@ -102,6 +125,7 @@ ul.workLinks li a img
 .row
 {
     margin: 0px;
+    margin-top: 20px;
 }
 .jumbotron h1
 {
@@ -112,6 +136,10 @@ ul.workLinks li a img
     color:  #856245;
 }
 
+.jumbotron ul.workLinks
+{
+    margin-top: 30px;
+}
 .jumbotron p.lead
 {
     font-family: 'Poppins', sans-serif;
@@ -138,7 +166,7 @@ h1+p a {
 h1+p a:hover {
 	text-decoration: none;
 }
-h2 {
+span.thumbnail-description h2 {
 	margin: 60px 15px 0;
 	padding: 0;
 	font-weight: 300;
@@ -148,13 +176,7 @@ h2 span {
 	color: #aaa;
 	font-size: 85%;
 }
-.column {
-	margin: 15px 15px 0;
-	padding: 0;
-}
-.column:last-child {
-	padding-bottom: 60px;
-}
+
 .column::after {
 	content: '';
 	clear: both;
@@ -168,11 +190,13 @@ h2 span {
 	padding: 0;
 }
 .column div:first-child {
-	margin-left: 0;
+    display: grid;
+    align-content: center;
+    height: 94vh;
 }
 .column div span {
 	position: absolute;
-	bottom: -2px;
+	
 	left: 0;
 	z-index: 1;
 	display: block;
@@ -185,48 +209,64 @@ h2 span {
 	text-align: left;
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
-    opacity: 0;
-    background-color: rgba(0,0,0,.5);
-}
-figure {
-	width: 300px;
-	border-radius:13px ;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
+    opacity: 1;
 }
 
-
-figure img 
+.column div span.thumbnail-description
 {
-    width: 100%;
+    bottom: -2px;
+    left: 10px;
 }
+
 
 .gallery a {
-	width: 300px;
-	border-radius:13px ;
+	
+	border-radius:4px ;
 	margin: 0;
-	padding: 0;
-	overflow: hidden;
+    padding: 0;
+    display: block;
+	/* overflow: hidden; */
 }
 
+.gallery a:hover img
+{
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+}
+
+
+
+.gallery a span.thumbnail-background
+{
+    background-color: #000;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
 .gallery ul
 {
-    width: 100%;
-    text-align: center;
+    margin-bottom: 3%;
 }
 
 .gallery p
 {
     margin-left: 15px;
     font-weight: 100;
+    font-size: 14px;
+    margin-top: 5px;
 }
 
 .gallery h2
 {
-    margin-top:15px;
-    font-weight: 600;
-    font-size: 21px;
+    margin-top: 15px;
+    font-weight: 500;
+    font-size: 19px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 75%;
+    word-spacing: 5px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .gallery ul li
@@ -241,14 +281,27 @@ figure img
    position: relative; 
 }
 
-.gallery a:hover+span {
-	bottom: 0px;
-	opacity: 1;
+.gallery a:hover span.thumbnail-description {
+    bottom: 10px;
+    left: 10px;
+    opacity: 1;
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    z-index: 2;
+}
+
+.gallery a:hover span.thumbnail-background {
+	
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
 }
 
 .gallery a img 
 {
-    width: 100%;
+    width: 102%;
+    margin: -3px;
+    position: relative;
+    z-index: 2;
 }
 
 /* Blur */
@@ -264,5 +317,219 @@ figure img
 }
 .gallery a:hover img {
 	-webkit-filter: blur(4px);
-	filter: blur(4px);
+    filter: blur(4px);
+    opacity: .6;
+}
+
+/* work detail styles  */
+
+.work-container img.hero-img
+{
+    width:100%;
+    margin-top: 80px;
+}
+
+.background-content
+{
+    margin:100px 0;
+}
+.background-content h1
+{
+    color:#8A674D;
+}
+
+.background-content p span
+{
+    color: #0E0D7F;
+    font-weight: 600;
+}
+
+.research-section
+{
+    width: 100%;
+    height: 616px;
+    display: flex;
+    border: solid 4px #0E0D7F;
+    padding: 30px 20px;
+    background-image: url(../images/greaterAtlanta/content-background.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+    background-position: 110px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.research-section h3
+{
+    color:#FD9726;
+    font-weight: 800;
+    font-size: 1.4em;
+
+}
+
+.research-section ul
+{
+    list-style-type: none;
+    padding-top: 120px;
+}
+.research-navigation
+{
+    float:left;
+}
+.research-results
+{
+    float: right;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 2px;
+    width: 600px;
+    box-shadow: 0px 2px 14px rgba(0,0,0,0.1);
+
+}
+
+.research-results h2
+{
+    font-weight:700;
+    font-size: 1.5em;
+}
+
+.research-results h4
+{
+    color:#FD9726;
+    font-weight: 800;
+    font-size: .9em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.research-results p
+{
+    font-size: .9em;
+}
+
+.research-results p.highlighted
+{
+    font-weight: 800;
+}
+.research-section li.active
+{
+    color:#0E0D81;
+    
+}
+
+.research-section li
+{
+    color:#DFDFEE;
+    font-size:2em;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.research-section li.active a
+{
+    color:#0E0D81;
+}
+
+.research-section li a
+{
+    color:#DFDFEE;
+}
+
+.callout
+{
+    text-align: center;
+    max-width: 700px;
+    margin: 200px auto;
+}
+
+.callout h1
+{
+    color:#8A674D;
+}
+
+.value-proposition
+{
+    background-color: #0C0083;
+    width: 100vw;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    display: grid;
+    text-align: left;
+    height: 100vh;
+    color: #ffffff;
+}
+
+.value-proposition ul
+{
+    list-style-type: none;
+    margin: 110px 80px 0px;
+}
+
+
+.value-proposition li
+{
+    display: inline;
+    margin-right: 60px;
+    text-transform: uppercase;
+   
+    font-weight: 800;
+}
+.value-proposition li a 
+{
+    color: #FD9726;
+    font-size: 25px;
+}
+
+.value-proposition h1
+{
+    width: 80%;
+    margin-left: 80px;
+    font-weight: 100;
+}
+
+.value-proposition h1 span
+{
+    font-weight: 500;
+}
+.value-proposition img
+{
+    width: 100%;
+}
+.wireframing
+{
+    position: relative;
+    margin-top: 150vh;
+    display: grid;
+    justify-items: center;
+}
+
+.wireframing h3
+{
+    color:#FD9726;
+    font-weight: 800;
+    font-size: 1.4em;
+    margin-bottom:60px;
+
+}
+
+.wireframing img
+{
+    margin-bottom:150px
+}
+
+.more-work
+{
+    width:90%;
+    margin: auto !important;
+    float: none !important;
+    height: inherit ! important;
+}
+
+.more-work h6
+{
+    margin-left: 3%;
+    color:#8A674D ;
+    font-weight: 500;
 }
