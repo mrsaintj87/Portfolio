@@ -25,6 +25,7 @@ img
     max-height: 70px;
     position: relative;
     z-index: 5;
+    border: solid 10px #f5f6f7;
 }
 
 .navbar-brand
@@ -247,6 +248,8 @@ h2 span {
 .gallery ul
 {
     margin-bottom: 3%;
+    width: 100%;
+    text-align: center;
 }
 
 .gallery p
@@ -273,7 +276,7 @@ h2 span {
 {
     display: inline-block;
     width: 30%; 
-    margin-left: 3%;
+    margin: 1%;
 }
 
 .gallery li
@@ -532,4 +535,60 @@ h2 span {
     margin-left: 3%;
     color:#8A674D ;
     font-weight: 500;
+}
+
+
+/* footer */
+
+a.contact
+{
+    color: black;
+    font-size: 12px;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+footer
+{
+    color: #8A674D;
+    display: flex;
+    justify-content: center;
+    margin: 1%;
+    background-color: #efefef;
+    padding: 1% 0px;
+    align-items: center;
+
+}
+
+footer a
+{
+    color: #8A674D;
+}
+
+footer ul
+{
+    display: block;
+    transform: rotate(90deg);
+    position: fixed;
+    right: -7%;
+    top: 335px;
+    width: 300px;
+    text-align: center;
+}
+
+footer ul li
+{
+    display: inline;
+}
+
+footer h3.project-title
+{
+    position: fixed;
+    transform: rotate(-90deg);
+    top: 345px;
+    left: -7%;
+    font-size: 1em;
+    width: 300px;
+    text-align: center;
+    opacity: .2;
 }
